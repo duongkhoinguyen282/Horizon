@@ -52,7 +52,7 @@
     btnEn.type = 'button';
 
     var btnZh = document.createElement('button');
-    btnZh.textContent = 'Vi';
+    btnZh.textContent = 'VI';
     btnZh.type = 'button';
 
     toggle.appendChild(btnEn);
