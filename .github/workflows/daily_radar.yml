@@ -1,0 +1,39 @@
+name: Daily Horizon Radar & Deploy Web
+
+on:
+  schedule:
+    - cron: '0 23 * * *' # 23:00 UTC tức là 6:00 sáng giờ Việt Nam hàng ngày
+  workflow_dispatch: # Nút bấm để mày thích tự chạy bằng tay lúc nào cũng được
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Run Horizon Scraper & LLM
+        env:
+          # Ném API key của mày vào đây (Sẽ cấu hình ở Bước 4)
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          # Chạy lệnh cào và sinh web của Horizon (đã config output ra thư mục web)
+          uv run main.py 
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web # Hoặc thư mục output web mà con Horizon sinh ra (thường cấu hình trong config)
