@@ -1,11 +1,10 @@
 name: Daily Horizon Summary
 
 on:
-  # schedule:
-  #   - cron: '0 0 */2 * *'  # Runs every 2 days at 00:00 UTC
-  #     timezone: 'Asia/Shanghai'
-  workflow_dispatch:      # Allow manual trigger
-
+  schedule:
+    - cron: '0 22 * * *'  # Chạy lúc 22:00 UTC, tức là 5:00 sáng hôm sau giờ Việt Nam
+  workflow_dispatch:      # Cho phép trigger thủ công khi nào mày nhớ ra hoặc muốn test
+  
 jobs:
   daily-summary:
     runs-on: ubuntu-latest
@@ -36,7 +35,7 @@ jobs:
           # Modify these based on your data/config.github.json provider settings
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           LWN_KEY: ${{ secrets.LWN_KEY }}
         run: uv run horizon --hours 48
 
