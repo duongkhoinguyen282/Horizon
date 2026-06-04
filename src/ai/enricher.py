@@ -246,7 +246,7 @@ class ContentEnricher:
                     f'Title: {item.title}\n'
                     f'Summary: {item.ai_summary or item.title}\n\n'
                     'Return JSON:\n'
-                    '{"title_zh": "<中文标题>", "summary_zh": "<用中文写1-2句摘要>"}'
+                    '{"title_zh": "Lỗi tiêu đề", "summary_zh": "Không thể tạo tóm tắt Tiếng Việt cho bài viết này."}'
                 ),
             )
             result = self._parse_json_response(response)
