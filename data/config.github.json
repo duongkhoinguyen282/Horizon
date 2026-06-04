@@ -11,7 +11,7 @@
     "analysis_concurrency": 1,
     "enrichment_concurrency": 1,
     "languages": ["en", "zh"]
-}
+},
   "email": {
     "enabled": false,
     "smtp_server": "smtp.qq.com",
