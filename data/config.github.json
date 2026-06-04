@@ -1,15 +1,16 @@
 {
   "version": "1.0",
   "ai": {
-    "provider": "openai",
-    "model": "gpt-4",
-    "api_key_env": "OPENAI_API_KEY",
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "api_key_env": "GEMINI_API_KEY",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
     "temperature": 0.3,
     "max_tokens": 4096,
     "throttle_sec": 0,
     "analysis_concurrency": 1,
     "enrichment_concurrency": 1
-  },
+}
   "email": {
     "enabled": false,
     "smtp_server": "smtp.qq.com",
