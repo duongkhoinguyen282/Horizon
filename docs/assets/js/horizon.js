@@ -52,7 +52,7 @@
     btnEn.type = 'button';
 
     var btnZh = document.createElement('button');
-    btnZh.textContent = '中文';
+    btnZh.textContent = 'Vi';
     btnZh.type = 'button';
 
     toggle.appendChild(btnEn);
