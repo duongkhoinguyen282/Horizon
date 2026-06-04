@@ -10,7 +10,7 @@
     "throttle_sec": 0,
     "analysis_concurrency": 1,
     "enrichment_concurrency": 1,
-    "languages": ["en"]
+    "languages": ["en", "zh"]
 }
   "email": {
     "enabled": false,
