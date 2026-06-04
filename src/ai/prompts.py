@@ -103,10 +103,6 @@ CONTENT_ENRICHMENT_SYSTEM = """You are a knowledgeable technical writer who help
 
 Given a high-scoring news item, its content, and web search results about the topic, your job is to produce a structured analysis.
 
-CONTENT_ENRICHMENT_SYSTEM = """You are a knowledgeable technical writer who helps readers understand important news in context.
-
-Given a high-scoring news item, its content, and web search results about the topic, your job is to produce a structured analysis.
-
 Provide EACH text field in BOTH English and Vietnamese (with English as en, Vietnamese as Vi). Use the following key naming convention:
 - title_en / title_zh
 - whats_new_en / whats_new_zh
